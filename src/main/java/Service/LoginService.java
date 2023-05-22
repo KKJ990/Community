@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.Community.PostRepository.Post;
 import com.example.Community.Repository.Member;
 import com.example.Community.Repository.MemberRepository;
 
@@ -13,10 +14,12 @@ public class LoginService {
 	
 	Member member = new Member();	
 	private MemberRepository memberRepository; 
+	PostService postService ;
 
-	public LoginService(MemberRepository memberRepository) {
+	public LoginService(MemberRepository memberRepository , PostService postService) {
 		
 		this.memberRepository = memberRepository;
+		this.postService = postService;
 		
 		
 		
@@ -73,6 +76,10 @@ public class LoginService {
 		
 		if(userid.equals(memberRepository.findbyuserid(userid).get().getUserid())&&
 		   pw.equals(memberRepository.findbyuserid(userid).get().getPw())) {
+			
+			
+			postService.setUserid(userid);
+			
 			return true;
 			
 		}
@@ -85,5 +92,13 @@ public class LoginService {
 		
 		return false;
 	}
+
+
+	
+
+
+	
+
+	
 	
 }

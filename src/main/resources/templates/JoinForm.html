@@ -1,18 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>회원가입</title>
+<meta charset="EUC-KR">
+<link rel="stylesheet" href="main.css"/>
+<style>
+.div{
+	margin: auto;
+	text-align: center;
+}
+table{
+	margin: auto;
+}
+.signup{
+	width: 250px;
+	padding: 8px;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+#signupButton{
+	width: 270px;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: white;
+	border-radius: 9px;
+	border: 1px solid green;
+}
+a:link, a:visited{
+	color: blue;
+}
+</style>
+<title>Insert title here</title>
 </head>
 <body>
-<form method="post">
-    ID: <input type="text" name="userid"><br>
-    PW:  <input type="password" name="pw"><br>
-    이름: <input type="text" name="name"><br>
-    전화번호:  <input type="text" name="phone"><br>
-    <input type="submit" value="가입" formaction="JoinComplete">
-</form>
 
+<div class="div">
+<header id="sub_header"></header>
+<header id="title_header">
+	회원가입
+</header>
+<form action="/" method="post">
+<table>
+		<tr>
+			<td><input type="hidden" name="_type" value="signup"></td>
+		</tr>
+		<tr>
+			<td><input class="signup" type="text" placeholder="ID를입력하세요" name="userid"></td>
+		</tr>
+		<tr>
+			<td><input class="signup" type="password" placeholder="PW를입력하세요" name="pw"></td>
+		</tr>
+		<tr>
+			<td><input class="signup" type="text" placeholder="이름을입력하세요" name="name"></td>
+		</tr>
+		<tr>
+			<td><input class="signup" type="text" placeholder="핸드폰 번호를 입력하세요" name="phone"></td>
+		</tr>
+		
+		<tr>
+			<td><input id="signupButton" type="submit" value="회원가입" formaction="JoinComplete"></td>
+		</tr>
+</table>
+</form>
+</div>
 
 </body>
 </html>

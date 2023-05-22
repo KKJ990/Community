@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<link rel="stylesheet" href="main.css"/>
+<style>
+
+table{
+	margin: auto;
+	text-align: center;
+}
+.input{
+	width: 500px;
+	margin-bottom: 5px;
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+#button{
+	padding: 5px;
+	float: right;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid green;
+}
+</style>
+<title>게시글 작성</title>
+</head>
+<body>
+
+<header id="sub_header"></header>
+<header id="title_header">
+</header>
+<div class="div">
+<form action="PostingComplete" method="post">
+
+<table style="margin-top: 20px;">
+	
+	<tr>
+		<td><input type="text" class="input" name="title" placeholder="제목을 입력해주세요"></td>
+	</tr>
+	<tr>
+		<td><textarea rows="20" class="input" name="content" placeholder="내용을 입력해주세요" ></textarea></td>
+	</tr>
+	<tr>
+		<td><input id="submit" type="submit" value="작성" formaction="PostComplete"></td>
+	</tr>
+
+</table>
+</form>
+</div>
+
+</body>
+</html>

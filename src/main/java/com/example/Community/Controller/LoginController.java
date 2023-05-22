@@ -1,7 +1,7 @@
 package com.example.Community.Controller;
 
-import com.example.Community.Repository.Member;
 
+import com.example.Community.Repository.Member;
 
 import Service.LoginService;
 
@@ -12,14 +12,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
 
     Member member = new Member();
+  
     
     private LoginService loginService;
+
     
     @Autowired
     public LoginController(LoginService loginService){
@@ -33,23 +36,28 @@ public class LoginController {
     //로그인
     @GetMapping("/")
     public String Login(){
-        return "Login";
+    	
+    	
+    	
+        return "/Login";
+        
     }
     
     @PostMapping("/")
-    public String LoginCheck(HttpServletRequest request){
-    	Member check= new Member();
+    public String LoginCheck(HttpServletRequest request , Model model){
+    	Member check = new Member();
     	check.setUserid(request.getParameter("userid"));
     	check.setPw(request.getParameter("pw"));
     	if(loginService.Login(check.getUserid(), check.getPw())) {
     		
+    	
+ 
     		
-    		return "Main";
+    		return "/Main";
     	}else {
     	
-    	
 
-    return "Login";
+    return "LoginFail";
     	}
         }
 
@@ -57,7 +65,7 @@ public class LoginController {
     @PostMapping("Join")
     public String CreateJoinForm(){
 
-        return "JoinForm";
+        return "/JoinForm";
     }
 
     @PostMapping("JoinComplete")
@@ -67,7 +75,7 @@ public class LoginController {
     	loginService.join(member);
 
 
-    return "Login";
+    return "/Login";
     }
 
 
@@ -78,6 +86,17 @@ public class LoginController {
 
 
 
-        return "Main";
+        return "/Main";
     }
+    @PostMapping("/returnLogin")
+    public String returnLoginPost() {
+    	
+    	
+    	
+    	return "redirect:/";
+    }
+
+
+
+  
 }

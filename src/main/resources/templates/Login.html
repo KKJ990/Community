@@ -1,17 +1,78 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>로그인</title>
+<meta charset="EUC-KR">
+<link rel="stylesheet" href="main.css"/>
+<style>
+.div{
+	margin: auto;
+	text-align: center;
+}
+
+
+table{
+	margin: auto;
+}
+.login{
+	width: 250px;
+	padding: 8px;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	border: 1px solid gray;
+}
+#loginButton{
+	width: 270px;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: white;
+	border-radius: 9px;
+	border: 1px solid green;
+}
+#JoinButton{
+	width: 270px;
+	padding: 10px;
+	margin-bottom: 10px;
+	background: white;
+	border-radius: 9px;
+	border: 1px solid green;
+}
+a:link, a:visited{
+	color: blue;
+}
+</style>
+<title>로그인</title>
 </head>
 <body>
-<form method="post">
-    ID: <input type="text" name="userid"><br>
-    PW:  <input type="password" name="pw"><br>
-    <input type="submit" value="로그인"formaction="/">
-    <input type="submit" value="회원가입"formaction="Join">
-</form>
 
+<header id="sub_header"></header>
+<header id="title_header">
+
+
+</header>
+
+<div class="div">
+	<form action="/" method="post">
+	<table>
+		<tr>
+			<td><input type="hidden" name="_type" value="login"></td>
+		</tr>
+		<tr>
+			<td><input class="login" type="text" name="userid" placeholder="아이디를 입력하세요"></td>
+		</tr>
+		<tr>
+			<td><input class="login" type="password" name="pw" placeholder="비밀번호를 입력하세요"></td>
+		</tr>
+		<tr>
+			<td><input id="loginButton" type="submit" value="로그인"></td>
+		</tr>
+		<tr>
+			<td><input id="JoinButton" type="submit" value="회원가입" formaction="Join"></td>
+		</tr>
+		
+		
+</table>
+</form>
+</div>
 
 </body>
 </html>
